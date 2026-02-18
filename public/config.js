@@ -22,6 +22,7 @@
                     authDomain: window.FIREBASE_AUTH_DOMAIN || '',
                     projectId: window.FIREBASE_PROJECT_ID || '',
                 },
+                oauthClientId: window.OAUTH_CLIENT_ID || '531991202663-92qvrma2jg8juh792n80a84ivupi5oia.apps.googleusercontent.com',
                 appVersion: '1.0.0',
                 updateCheckUrl: window.UPDATE_CHECK_URL || 'https://api.examearn.com/check-update'
             };

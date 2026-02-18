@@ -11,6 +11,7 @@ module.exports = (req, res) => {
             authDomain: process.env.FIREBASE_AUTH_DOMAIN || '',
             projectId: process.env.FIREBASE_PROJECT_ID || '',
         },
+        oauthClientId: process.env.OAUTH_CLIENT_ID || '531991202663-92qvrma2jg8juh792n80a84ivupi5oia.apps.googleusercontent.com',
         appVersion: '1.0.0',
     };
 
