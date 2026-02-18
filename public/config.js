@@ -21,6 +21,10 @@
                     apiKey: window.FIREBASE_API_KEY || '',
                     authDomain: window.FIREBASE_AUTH_DOMAIN || '',
                     projectId: window.FIREBASE_PROJECT_ID || '',
+                    storageBucket: window.FIREBASE_STORAGE_BUCKET || '',
+                    messagingSenderId: window.FIREBASE_MESSAGING_SENDER_ID || '',
+                    appId: window.FIREBASE_APP_ID || '',
+                    measurementId: window.FIREBASE_MEASUREMENT_ID || '', // Optional
                 },
                 oauthClientId: window.OAUTH_CLIENT_ID || '531991202663-92qvrma2jg8juh792n80a84ivupi5oia.apps.googleusercontent.com',
                 appVersion: '1.0.0',
