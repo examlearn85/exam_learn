@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -68,6 +71,67 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .nav-auth {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-login {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient);
+            color: var(--secondary-color);
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(203, 254, 28, 0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(203, 254, 28, 0.4);
+        }
+
+        .btn-login i {
+            font-size: 1.2rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .btn-dashboard {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-dashboard:hover {
+            background: var(--primary-color);
+            color: var(--secondary-color);
         }
 
         /* Hero Section */
@@ -358,7 +422,11 @@
     <header>
         <nav>
             <div class="logo">📱 ExamEarn</div>
-            <div style="color: var(--text-secondary);">Quiz & Earn Platform</div>
+            <div class="nav-auth" id="nav-auth">
+                <a href="login.html" class="btn-login">
+                    <i class="fas fa-user-circle"></i> Login / Sign Up
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -459,12 +527,42 @@
         </div>
     </footer>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    
     <!-- Config Script -->
     <script src="/public/config.js"></script>
     <script>
+        let auth = null;
+        
         // Wait for config to load
         window.addEventListener('configLoaded', function() {
             const config = window.ExamEarnConfig;
+            
+            // Initialize Firebase for auth check
+            if (config.firebaseConfig && config.firebaseConfig.apiKey) {
+                firebase.initializeApp(config.firebaseConfig);
+                auth = firebase.auth();
+                
+                // Check if user is logged in
+                auth.onAuthStateChanged((user) => {
+                    const navAuth = document.getElementById('nav-auth');
+                    if (user) {
+                        navAuth.innerHTML = `
+                            <a href="dashboard.html" class="btn-dashboard">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        `;
+                    } else {
+                        navAuth.innerHTML = `
+                            <a href="login.html" class="btn-login">
+                                <i class="fas fa-user-circle"></i> Login / Sign Up
+                            </a>
+                        `;
+                    }
+                });
+            }
             
             // Update hero text
             if (config.heroText) {
