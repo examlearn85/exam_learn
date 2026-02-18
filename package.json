@@ -1,0 +1,22 @@
+{
+  "name": "examearn",
+  "version": "1.0.0",
+  "description": "ExamEarn - Quiz Khelo, Knowledge Badhao, Paise Kamao!",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "quiz",
+    "earn",
+    "education",
+    "exam"
+  ],
+  "author": "ExamEarn Team",
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}
+

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ExamEarn - Quiz Khelo, Knowledge Badhao, Paise Kamao! Download our Android app and start earning rewards by solving quizzes.">
+    <meta name="keywords" content="quiz app, earn money, quiz and earn, exam earn, quiz game, earn rewards, educational quiz">
+    <title>ExamEarn - Quiz Khelo, Knowledge Badhao, Paise Kamao!</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/20000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #CBFE1C;
+            --secondary-color: #0B0E13;
+            --text-color: #ffffff;
+            --text-secondary: #b0b0b0;
+            --bg-dark: #0B0E13;
+            --bg-card: #1a1d24;
+            --success: #4CAF50;
+            --gradient: linear-gradient(135deg, #CBFE1C 0%, #9FE01C 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(11, 14, 19, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 2rem 60px;
+            background: radial-gradient(circle at 50% 50%, rgba(203, 254, 28, 0.1) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(203, 254, 28, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: var(--secondary-color);
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(203, 254, 28, 0.3);
+            margin: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(203, 254, 28, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .download-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient);
+            border-radius: 25px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 20px 60px rgba(203, 254, 28, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(203, 254, 28, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(203, 254, 28, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 2rem;
+            background: rgba(203, 254, 28, 0.05);
+        }
+
+        .steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(203, 254, 28, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .download-btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Android Detection */
+        .android-only {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .android-only {
+                display: block;
+                margin-top: 1rem;
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">📱 ExamEarn</div>
+            <div style="color: var(--text-secondary);">Quiz & Earn Platform</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon">📱</div>
+            <h1 id="hero-text">Quiz Khelo, Knowledge Badhao, Paise Kamao!</h1>
+            <p class="hero-subtitle">
+                50 Chapters के Quiz खेलें, सही जवाब दें और पैसे कमाएं! 
+                <br>Chapter 1 में ₹20 Cash मिलता है, बाकी Chapters में Gold Coins!
+            </p>
+            <a href="#" id="download-btn" class="download-btn">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                <span>Download App</span>
+            </a>
+            <p class="android-only">📱 Android Device पर Download करें</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">क्यों ExamEarn?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>पैसे कमाएं</h3>
+                <p>Quiz खेलकर पैसे कमाएं। Chapter 1 Complete करने पर ₹20 Cash मिलता है!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>50 Chapters</h3>
+                <p>5th से 12th Class, SSC, RRB, Bank, IAS/PCS और भी बहुत कुछ!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Easy to Use</h3>
+                <p>Simple Interface, आसान Navigation, और Instant Results!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure</h3>
+                <p>Safe Wallet System, Encrypted Data, और Secure Withdrawals!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Rewards</h3>
+                <p>Chapter 1: ₹20 Cash | Chapter 11-50: 15 Gold Coins per Chapter!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Free Download</h3>
+                <p>100% Free App Download, कोई Hidden Charges नहीं!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">कैसे Use करें?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Download करें</h3>
+                <p>ऊपर दिए गए Download Button से App Download करें</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Install करें</h3>
+                <p>Downloaded APK File को Install करें (Unknown Sources Allow करें)</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Login करें</h3>
+                <p>App Open करें और Phone Number से Login करें</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Quiz खेलें</h3>
+                <p>Category चुनें, Chapter Select करें और Quiz Start करें!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="/admin" target="_blank">Admin Panel</a>
+            </div>
+            <div class="copyright">
+                © 2024 ExamEarn. All rights reserved. | Quiz Khelo, Knowledge Badhao, Paise Kamao!
+            </div>
+        </div>
+    </footer>
+
+    <!-- Config Script -->
+    <script src="/public/config.js"></script>
+    <script>
+        // Wait for config to load
+        window.addEventListener('configLoaded', function() {
+            const config = window.ExamEarnConfig;
+            
+            // Update hero text
+            if (config.heroText) {
+                document.getElementById('hero-text').textContent = config.heroText;
+            }
+            
+            // Set download button URL
+            const downloadBtn = document.getElementById('download-btn');
+            if (config.apkDownloadUrl) {
+                downloadBtn.href = config.apkDownloadUrl;
+                downloadBtn.addEventListener('click', function(e) {
+                    // Track download (optional)
+                    console.log('Download initiated:', config.apkDownloadUrl);
+                    
+                    // For direct download
+                    if (config.apkDownloadUrl.startsWith('http')) {
+                        window.open(config.apkDownloadUrl, '_blank');
+                    }
+                });
+            } else {
+                downloadBtn.href = '/downloads/examearn.apk';
+            }
+            
+            // Remove loading state
+            document.body.classList.remove('loading');
+        });
+
+        // Fallback if config doesn't load
+        setTimeout(function() {
+            if (!window.ExamEarnConfig) {
+                const downloadBtn = document.getElementById('download-btn');
+                downloadBtn.href = '/downloads/examearn.apk';
+                document.body.classList.remove('loading');
+            }
+        }, 2000);
+
+        // Android detection for better UX
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        if (isAndroid) {
+            document.querySelector('.android-only').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+

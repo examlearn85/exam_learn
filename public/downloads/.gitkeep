@@ -1,0 +1,4 @@
+# APK files will be uploaded here
+# For production, upload your APK file to this directory
+# Or use external storage (AWS S3, Google Drive) and update the download link in admin panel
+
