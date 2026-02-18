@@ -15,12 +15,12 @@ Based on your project details, here are the config values you'll need:
 ### Web App Config
 ```javascript
 firebaseConfig: {
-  apiKey: "YOUR_API_KEY_HERE", // Get from Firebase Console
+  apiKey: "AIzaSyAl21BbE84_9pntd_O-y3Nn5YflNUFMI1",
   authDomain: "examearns.firebaseapp.com",
   projectId: "examearns",
   storageBucket: "examearns.appspot.com",
   messagingSenderId: "531991202663",
-  appId: "YOUR_APP_ID_HERE", // Get from Firebase Console
+  appId: "1:531991202663:web:be7e857c71f4316d8d3dc2",
   measurementId: "G-XXXXXXXXXX" // Optional
 }
 ```
@@ -36,12 +36,12 @@ Add these in Vercel Dashboard → Settings → Environment Variables:
 
 ```bash
 # Firebase Config
-FIREBASE_API_KEY=YOUR_API_KEY_HERE
+FIREBASE_API_KEY=AIzaSyAl21BbE84_9pntd_O-y3Nn5YflNUFMI1
 FIREBASE_AUTH_DOMAIN=examearns.firebaseapp.com
 FIREBASE_PROJECT_ID=examearns
 FIREBASE_STORAGE_BUCKET=examearns.appspot.com
 FIREBASE_MESSAGING_SENDER_ID=531991202663
-FIREBASE_APP_ID=YOUR_APP_ID_HERE
+FIREBASE_APP_ID=1:531991202663:web:be7e857c71f4316d8d3dc2
 
 # OAuth
 OAUTH_CLIENT_ID=531991202663-92qvrma2jg8juh792n80a84ivupi5oia.apps.googleusercontent.com

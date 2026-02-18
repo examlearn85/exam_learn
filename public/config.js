@@ -18,12 +18,12 @@
                 apkDownloadUrl: window.APK_DOWNLOAD_URL || '/downloads/examearn.apk',
                 heroText: window.HERO_TEXT || 'Quiz Khelo, Knowledge Badhao, Paise Kamao!',
                 firebaseConfig: {
-                    apiKey: window.FIREBASE_API_KEY || '',
+                    apiKey: window.FIREBASE_API_KEY || 'AIzaSyAl21BbE84_9pntd_O-y3Nn5YflNUFMI1',
                     authDomain: window.FIREBASE_AUTH_DOMAIN || 'examearns.firebaseapp.com',
                     projectId: window.FIREBASE_PROJECT_ID || 'examearns',
                     storageBucket: window.FIREBASE_STORAGE_BUCKET || 'examearns.appspot.com',
                     messagingSenderId: window.FIREBASE_MESSAGING_SENDER_ID || '531991202663',
-                    appId: window.FIREBASE_APP_ID || '',
+                    appId: window.FIREBASE_APP_ID || '1:531991202663:web:be7e857c71f4316d8d3dc2',
                     measurementId: window.FIREBASE_MEASUREMENT_ID || '', // Optional
                 },
                 oauthClientId: window.OAUTH_CLIENT_ID || '531991202663-92qvrma2jg8juh792n80a84ivupi5oia.apps.googleusercontent.com',

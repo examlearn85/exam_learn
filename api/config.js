@@ -7,12 +7,12 @@ module.exports = (req, res) => {
         apkDownloadUrl: process.env.APK_DOWNLOAD_URL || '/downloads/examearn.apk',
         heroText: process.env.HERO_TEXT || 'Quiz Khelo, Knowledge Badhao, Paise Kamao!',
         firebaseConfig: {
-            apiKey: process.env.FIREBASE_API_KEY || '',
+            apiKey: process.env.FIREBASE_API_KEY || 'AIzaSyAl21BbE84_9pntd_O-y3Nn5YflNUFMI1',
             authDomain: process.env.FIREBASE_AUTH_DOMAIN || 'examearns.firebaseapp.com',
             projectId: process.env.FIREBASE_PROJECT_ID || 'examearns',
             storageBucket: process.env.FIREBASE_STORAGE_BUCKET || 'examearns.appspot.com',
             messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || '531991202663',
-            appId: process.env.FIREBASE_APP_ID || '',
+            appId: process.env.FIREBASE_APP_ID || '1:531991202663:web:be7e857c71f4316d8d3dc2',
             measurementId: process.env.FIREBASE_MEASUREMENT_ID || '', // Optional
         },
         oauthClientId: process.env.OAUTH_CLIENT_ID || '531991202663-92qvrma2jg8juh792n80a84ivupi5oia.apps.googleusercontent.com',
