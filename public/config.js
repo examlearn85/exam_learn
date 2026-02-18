@@ -19,10 +19,10 @@
                 heroText: window.HERO_TEXT || 'Quiz Khelo, Knowledge Badhao, Paise Kamao!',
                 firebaseConfig: {
                     apiKey: window.FIREBASE_API_KEY || '',
-                    authDomain: window.FIREBASE_AUTH_DOMAIN || '',
-                    projectId: window.FIREBASE_PROJECT_ID || '',
-                    storageBucket: window.FIREBASE_STORAGE_BUCKET || '',
-                    messagingSenderId: window.FIREBASE_MESSAGING_SENDER_ID || '',
+                    authDomain: window.FIREBASE_AUTH_DOMAIN || 'examearns.firebaseapp.com',
+                    projectId: window.FIREBASE_PROJECT_ID || 'examearns',
+                    storageBucket: window.FIREBASE_STORAGE_BUCKET || 'examearns.appspot.com',
+                    messagingSenderId: window.FIREBASE_MESSAGING_SENDER_ID || '531991202663',
                     appId: window.FIREBASE_APP_ID || '',
                     measurementId: window.FIREBASE_MEASUREMENT_ID || '', // Optional
                 },
